@@ -1,3 +1,16 @@
+<? 
+  include("../config/db.php");
+
+  $message = "";
+
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $full_name = trim($_POST["full_name"]);
+    $email = trim($_POST["email"]);
+    $password = $_POST["password"];
+    $confirm = $_POST["confirm_password"];
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
