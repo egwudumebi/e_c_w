@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+      crossorigin="anonymous">
     <title>Products | GrabBoss</title>
   </head>
   <body>
@@ -16,8 +18,9 @@
 
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
-            <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+            <li class="nav-item"><a href="products.php" class="nav-link text-light">Products</a></li>
+            <li class="nav-item"><a href="cart.php" class="nav-link">Cart</a></li>
+  
           </ul>
         </div>
 
@@ -28,173 +31,7 @@
     <section class="container py-5">
       <div class="row g-4">
         <!-- Product Card -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img src="" alt="Product">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title">Smartphone</h6>
-              <p class="text-muted mb-1">N120,000</p>
-              <p class="small text-secondary">Heigh Quality smartphone</p>
-              <a href="products-details.html">View Details</a>
-            </div>
-          </div>
-        </div>
+        
 
         
       </div>

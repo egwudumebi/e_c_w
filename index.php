@@ -5,7 +5,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+      crossorigin="anonymous">
     <title>Grab boss</title>
   </head>
   <body>
@@ -17,15 +19,8 @@
         </button>
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="register.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a href="register.html">Register</a>
-            </li>
-            <li class="nav-item">
-              <a href="cart.html">Cart</a>
-            </li>
+            <li class="nav-item"><a href="auth/register.php" class="nav-link">Register</a></li>
+            <li class="nav-item"><a href="cart.php" class="navlink">Cart</a></li>
           </ul>
         </div>
       </div>
@@ -35,7 +30,7 @@
       <div class="container">
         <h1 class="fw-bold">Welcome to GrabBoss</h1>
         <p class="text-muted">Your one-stop online shopping platform</p>
-        <a href="products.html" class="btn btn-primary">Shop Now</a>
+        <a href="products.php" class="btn btn-primary">Shop Now</a>
       </div>
     </section>
 

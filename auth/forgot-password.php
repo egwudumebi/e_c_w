@@ -40,9 +40,7 @@
       
       <div class="card p-4 shadow w-100" style="max-width: 400px;">
         <h4 class="text-center mb-4">GrabBoss</h4>
-        <?php if ($message) ?>
-          <div class="alert alert-danger"><?php echo $message; ?></div>
-        <?php endif; ?>
+        <div class="alert alert-danger"><?php echo $message; ?></div>
         <form action="" method="post">
           <div class="mb-3">
             <label for="" class="form-label">Registered Email</label>
