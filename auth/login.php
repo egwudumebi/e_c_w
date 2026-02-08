@@ -3,11 +3,30 @@
   include("../config/db.php");
   $message = "";
 
-  if($_SERVER["REQUEST_METHOD"] == "POST") {
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password = $_POST["password"];
 
-    if
+    if (empty($email) || empty($password)) {
+      $message = "All fields are required";
+    } else {
+      $query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+      $result = mysqli_query($conn, $query);
+      if (mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
+        // Verify password
+        if(password_verify($password, $user["password"])) {
+          $_SESSION["user_id"] = $user["id"];
+          $_SESSION["user_name"] = $user["full_name"];
+          header("Location: ../index.php");
+          exit();
+        } else {
+          $message = "Invalid email or password";
+        }
+      } else {
+        $message = "Invalid email or password";
+      }
+    }
   }
 ?>
 
@@ -25,11 +44,11 @@
         <form action="" method="post">
           <div class="mb-3">
             <label for="" class="form-label">Email</label>
-            <input type="email" class="form-control" required>
+            <input type="email" nam="email" class="form-control" required>
           </div>
           <div class="mb-3">
             <label for="" class="form-label">Password</label>
-            <input type="password" class="form-control" required>
+            <input type="password" name="password" class="form-control" required>
           </div>
           <div class="mb-3">
             <button class="btn btn-primary w-100">Login</button>
