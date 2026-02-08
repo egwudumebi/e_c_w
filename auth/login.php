@@ -44,7 +44,7 @@
         <form action="" method="post">
           <div class="mb-3">
             <label for="" class="form-label">Email</label>
-            <input type="email" nam="email" class="form-control" required>
+            <input type="email" name="email" class="form-control" required>
           </div>
           <div class="mb-3">
             <label for="" class="form-label">Password</label>

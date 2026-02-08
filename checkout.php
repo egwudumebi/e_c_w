@@ -1,5 +1,42 @@
 <?php 
-  
+  session_start();
+  include("config/db.php");
+  //Protect page
+  if(!isset($_SESSION["user_id"])) {
+    header("Location: auth/login.php");
+    exit();
+  }
+  if(!isset($_SESSION["cart"]) || count($_SESSION["cart"]) == 0) {
+    header("Location: cart.php");
+    exit();
+  }
+  $message = "";
+  //Calculate total
+  $total = 0;
+  foreach ($_SESSION["cart"] as $item) {
+    $total += $_SESSION["user_id"];
+  }
+  if ($_SESSION["REQUEST_METHOD"] == "POST") {
+    $user_id = $_SESSION["user_id"];
+    //insert into orders table
+    $order_sql = "INSERT INTO orders (user_id, total) VALUE ('$user_id','$total')";
+    if(mysqli_query($conn, $order_sql)) {
+      $order_id = mysqli_insert_id($conn);
+      foreach($_SESSION["cart"] as $item) {
+        $pid = $item["id"];
+        $qty = $item["qty"];
+        $price = $item["price"];
+        mysqli_query($conn, "");
+      }
+      //clear cart
+      unset($_SESSION["cart"]);
+      //Redirect 
+      header("Location: order-success.php?order_id=$order_id");
+      exit();
+    } else {
+      $message = "Checkout failed. Try again.";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +54,6 @@
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a href="products.html" class="nav-link text-light">Products</a></li>
