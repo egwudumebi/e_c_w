@@ -1,7 +1,28 @@
 <?php 
   session_start();
+  include("../config/db.php");
   if (!isset($_SESSION["user_id"])) {
-    header("Location: login.php")
+    header("Location: login.php");
+    exit();
+  }
+
+  $message = "";
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim($_POST["email"]);
+    if (empty($email)) {
+      $message = "Please enter your email";
+    } else {
+      $query = "SELECT id FROM users WHERE email='$email' LIMIT 1";
+      $result = mysqli_query($conn, $query);
+      if(mysqli_num_rows($result) == 1) {
+        $_SESSION["reset_email"] = $email;
+        header("Location: reset-password.php");
+        exit();
+      } else {
+        $message = "Email not found";
+      }
+    }
   }
 
 ?>
@@ -19,6 +40,9 @@
       
       <div class="card p-4 shadow w-100" style="max-width: 400px;">
         <h4 class="text-center mb-4">GrabBoss</h4>
+        <?php if ($message) ?>
+          <div class="alert alert-danger"><?php echo $message; ?></div>
+        <?php endif; ?>
         <form action="" method="post">
           <div class="mb-3">
             <label for="" class="form-label">Registered Email</label>
