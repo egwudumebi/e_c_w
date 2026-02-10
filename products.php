@@ -7,8 +7,13 @@
     header("Location: auth/login.php");
     exit();
   }
-?>
 
+  $search = htmlspecialchars("");
+
+  if ($search = "") {
+    
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,12 +30,14 @@
   <body>
     <div class="amazon-header">
       <div class="amazon-header-left-section">
-        <a href="amazon.html" class="header-link">
-          <h4>GrabBoss</h4>
+        <a href="index.php" class="header-link">
+          <h4 style="color: white; ">
+            <u>GrabBoss</u>
+          </h4>
         </a>
       </div>
       <div class="amazon-header-middle-section">
-        <input class="search-bar" type="text" placeholder="Search">
+        <input class="search-bar" type="text" name="search" placeholder="Search">
         <button class="search-button">
           <img class="search-icon" src="images/icons/search-icon.png">
         </button>

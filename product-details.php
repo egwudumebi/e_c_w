@@ -40,7 +40,6 @@
         <div class="align-items-center">
           <img class="product-image" src="/bathroom-rug.jpg" width="90px">
         </div>
-
         <div class="col-12 col-md-6">
           <h3>Smartphone</h3>
           <p class="text\">Category: Electronics</p>
@@ -51,7 +50,6 @@
             battery, and modern design suitable for
             daily use
           </p>
-
           <div class="mb-3">
             <label for="form-label">Quantity</label>
             <input type="number" class="form-control w-50" value="1" min="1">

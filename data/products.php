@@ -99,8 +99,8 @@
     ],
     [
       "id" => "3fdfe8d6-9a15-4979-b459-585b0d0545b9",
-      "image" => "images/products/liqu-laundry-detergent-plain.jpg",
-      "name" => "Liqu Laundry Detergent, 110 Loads, 82.5 Fl Oz",
+      "image" => "images/products/liquid-laundry-detergent-plain.jpg",
+      "name" => "Liquid Laundry Detergent, 110 Loads, 82.5 Fl Oz",
       "rating" => [ "stars" => 4.5, "count" => 305 ],
       "priceCents" => 2899,
       "keywords" => [
