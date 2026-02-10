@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
       crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/products.css">
     <title>Products | GrabBoss</title>
   </head>
   <body>
@@ -35,35 +36,37 @@
 
     <!-- Pages Header -->
     <section class="container py-5">
-      <div class="row g-4">
+      <div class="row g-4 product-grid">
         <!-- Product Card -->
-
         <?php foreach($products as $product): ?>
           <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-100 shadow-sm">
-              <img src="<?php echo $product['image']; ?>" class="card-img-top" alt="<?php echo $product['name']; ?>">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title"><?php echo $product['name']; ?></h5>
-                <!-- Rating -->
-                <p class="text-warning mb-1">
-                  <?php echo str_repeat('★', floor($product['rating']['stars'])); ?>
-                  <?php if($product['rating']['stars'] - floor($product['rating']['stars']) >= 0.5) echo '½'; ?>
-                  (<?php echo $product['rating']['count']; ?>)
-                </p>
-                <!-- Price -->
-                <p class="fw-bold">₦<?php echo number_format($product['priceCents']); ?></p>
-                <div class="mt-auto">
-                  <a href="product-details.php?id=<?php echo $product['id']; ?>" class="btn btn-sm btn-outline-primary w-100 mb-2">
-                    View Details
-                  </a>
-                  <form action="add-to-cart.php" method="POST">
-                      <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
-                      <input type="hidden" name="name" value="<?php echo $product['name']; ?>">
-                      <input type="hidden" name="price" value="<?php echo $product['priceCents']; ?>">
-                      <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
-                  </form>
+            <div class="product-container">
+              <div class="product-image-container">
+                <img class="product-image" src="<?php echo $product['image']; ?>">
+              </div> 
+              <div class="product-name limit-text-to-2-lines">
+                <?php echo $product['name']; ?>
+              </div>
+              <div class="product-rating-container">
+                <img class="product-rating-stars"
+                  src="images/ratings/rating-<?php echo $product['rating']['stars'] * 10; ?>.png">
+                <div class="product-rating-count link-primary">
+                    <?php echo $product['rating']['count']; ?>
                 </div>
               </div>
+              <div class="product-price">
+                $<?php echo number_format($product['priceCents'] / 100, 2); ?>
+              </div>
+              <div class="product-spacer"></div>
+              <div class="added-to-cart">
+                <img src="images/icons/checkmark.png">
+                Added
+              </div>
+              <button 
+                class="add-to-cart-button button-primary js-add-to-cart-button"
+                data-product-id="<?php echo $product['id']; ?>">
+                Add to Cart
+              </button>
             </div>
           </div>
         <?php endforeach; ?>
