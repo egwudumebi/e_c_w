@@ -8,10 +8,18 @@
     exit();
   }
 
-  $search = htmlspecialchars("");
+  $search = htmlspecialchars($_GET['search'] ?? '');
 
-  if ($search = "") {
-    
+  // filter products if search term exists
+  if ($search !== "") {
+    foreach($products as $product) {
+      if (stripos($product['name'], $search) !== false) {
+        $filteredProducts[] = $product;
+      }
+    }
+  } else {
+    /// No search term show all products
+    $filteredProducts = $products;
   }
 ?>
 <!DOCTYPE html>
@@ -37,10 +45,14 @@
         </a>
       </div>
       <div class="amazon-header-middle-section">
-        <input class="search-bar" type="text" name="search" placeholder="Search">
-        <button class="search-button">
-          <img class="search-icon" src="images/icons/search-icon.png">
-        </button>
+        <form action="products.php" method="products.php" class="search-form">
+          <input class="search-bar" type="text" name="search" placeholder="Search"
+            value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>"
+          >
+          <button class="search-button">
+            <img class="search-icon" src="images/icons/search-icon.png">
+          </button>
+        </form>
       </div>
       <div class="amazon-header-right-section">
         <a class="orders-link header-link" href="orders.html">
@@ -57,7 +69,7 @@
     <div class="main">
       <div class="products-grid js-products-grid">
         <!-- catalogues goes here.. -->
-        <?php foreach($products as $product): ?>
+        <?php foreach($filteredProducts as $product): ?>
           <div class="product-container">
             <div class="product-image-container">
               <img class="product-image"
