@@ -64,6 +64,7 @@
           <div class="cart-quantity js-cart-quantity">0</div>
           <div class="cart-text">Cart</div>
         </a>
+        <a href="auth/logout.php" class="header-link">Logout</a>
       </div>
     </div>
     <div class="main">
